@@ -1,5 +1,4 @@
-
-describe('headers tests', () => {
+describe('sikshavahini sample tests', () => {
     beforeEach('visit homepage', () => {
         cy.visit('https://gray-field-070f4930f.4.azurestaticapps.net/')
     })
@@ -14,11 +13,6 @@ describe('headers tests', () => {
       cy.get('.col-1 > div > .btn').click();
         cy.get('.mb-4 > #inputField').type('telugu');
         cy.get('.popup > .btn').click();
-        cy.get('.col-11 > .text-center').should('have.text', 'తెలుగు');
-        //cy.get(':nth-child(1) > .fontup2').should('have.text', 'శిక్షావాహిని')
-        
-    })
-
-
-      
+        cy.get('.col-11 > .text-center').should('have.text', 'తెలుగు');         
+    })      
 })
