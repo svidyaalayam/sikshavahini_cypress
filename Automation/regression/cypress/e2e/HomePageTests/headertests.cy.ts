@@ -1,10 +1,24 @@
 
 describe('headers tests', () => {
     beforeEach('visit homepage', () => {
-        cy.visit('http://localhost:5173/')
+        cy.visit('https://gray-field-070f4930f.4.azurestaticapps.net/')
     })
 
-    it('displays headers of the page', () => {
-        cy.get('.fontup3').should('have.text', 'బాల ముకుందము')
+    it('changing language to sanskrit is updating header to sanskrit', () => {
+        cy.get('.dropdown > .btn').click();
+        cy.get(':nth-child(2) > .dropdown-item').click();
+        cy.get('.fontup3').should('have.text', 'बालमुकुन्दम्‌');
       })
+
+    it('edit title should update the title', () => {
+      cy.get('.col-1 > div > .btn').click();
+        cy.get('.mb-4 > #inputField').type('telugu');
+        cy.get('.popup > .btn').click();
+        cy.get('.col-11 > .text-center').should('have.text', 'తెలుగు');
+        //cy.get(':nth-child(1) > .fontup2').should('have.text', 'శిక్షావాహిని')
+        
+    })
+
+
+      
 })
